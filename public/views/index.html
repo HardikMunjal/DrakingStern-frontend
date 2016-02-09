@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+
+<!-- define angular app -->
+<html ng-app="loginApp">
+
+<head>
+  <!-- SCROLLS -->
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.css" />
+
+  <!-- SPELLS -->
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min.js"></script>
+
+  <!-- using ui router instead of ng router  -->
+  <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.10/angular-ui-router.min.js"></script>
+  <script src="script.js"></script>
+  <script src="/scripts/controller/login/loginCtrl.js"></script>
+  <script src="/scripts/controller/register/registerCtrl.js"></script>
+  <script src="/scripts/controller/profile/UserProfile.js"></script>
+  <script src="/scripts/services/registerSvc.js"></script>
+  <script src="/scripts/directive/loginSharedTemplate.js"></script>
+  <script src="/scripts/directive/sharedMenu.js"></script>
+  <link rel="stylesheet" type="text/css" href="/stylesheets/style.css">
+ 
+ 
+</head>
+
+<!-- define angular controller -->
+<body style="background-color:#000000" ng-controller="sessionController">
+
+<div ng-if="$root.noSession">
+   <login-template></login-template>
+   <div class="col-md-6 col-md-offset-3">
+     <div id="main">
+       <div ui-view></div>
+     </div>
+  </div>
+</div>
+
+<div ng-if="$root.session">
+<global-view></global-view>
+</div>
+  
+  
+  <footer class="text-center">
+    <br>
+    <p>Frontend framework designed by hardi</a></p>
+  </footer>
+  
+</body>
+
+</html>

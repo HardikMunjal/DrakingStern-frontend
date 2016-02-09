@@ -1,0 +1,17 @@
+<div class="col-md-6 col-md-offset-3">
+<div class="form-group" ng-class="{ 'has-error': form.password.$dirty && form.password.$error.required }">
+            <label for="password">Password</label>
+            <input type="password" name="password" id="password" class="form-control" ng-model="form_data.password" required />
+            <span ng-show="form.password.$dirty && form.password.$error.required" class="help-block">Password is required</span>
+        </div>
+        <div class="form-group" ng-class="{ 'has-error': form.repassword.$dirty && form.repassword.$error.required }">
+            <label for="repassword">Re enter Password</label>
+            <input type="repassword" name="repassword" id="repassword" class="form-control" required />
+            <span ng-show="form.repassword.$dirty && form.repassword.$error.required" class="help-block">Password is required</span>
+        </div>
+        <div class="form-actions">
+            <button type="submit" ng-disabled="form.$invalid || vm.dataLoading" class="btn-lg btn-danger">Register</button>
+           <a href="#/login" class="btn-lg btn-link">Cancel</a>
+            </div>
+    </div>
+    {{notification}}

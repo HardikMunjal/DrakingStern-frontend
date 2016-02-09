@@ -1,0 +1,22 @@
+    <div class="col-md-6 col-md-offset-3">
+       <div class="form-group" ng-class="{ 'has-error': form.gender.$dirty && form.gender.$error.required }">
+            <label for="gender">Gender</label>
+            &nbsp;
+            <input type="radio" ng-model="form_data.gender" value="male">
+            male
+            <input type="radio" ng-model="form_data.gender" value="female"/>
+            female
+            <span ng-show="form.gender.$dirty && form.gender.$error.required" class="help-block">gender is required</span>
+        </div>
+         <div class="form-group" ng-class="{ 'has-error': form.dob.$dirty && form.dob.$error.required }">
+            <label for="dob">Date of Birth</label>
+            <input type="date" name="date" id="date" class="form-control" ng-model="form_data.dob" required />
+            <span ng-show="form.date.$dirty && form.date.$error.required" class="help-block">Date is required</span>
+        </div>
+        
+            <div class="text-center">
+                    <a ui-sref="register.securer" class="btn-lg btn-success">
+                    Next Section <span class="glyphicon glyphicon-circle-arrow-right"></span>
+                    </a>
+            </div>
+      </div>
